@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{71F191AD-64C2-42F5-8ABF-7B40792D4E7D}</ProjectGuid>
+    <RootNamespace>PrimaCausa</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Middlewares\FMOD-1.09.06\inc;$(SolutionDir)\Middlewares\Soil\include\;$(SolutionDir)\Middlewares\LUA-5.3.4_win32\include\;$(SolutionDir)\Middlewares\freeglut-3\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <PreprocessToFile>false</PreprocessToFile>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Middlewares\Soil\lib\;$(SolutionDir)\Middlewares\LUA-5.3.4_win32\;$(SolutionDir)\Middlewares\freeglut-3\;$(SolutionDir)\Middlewares\FMOD-1.09.06\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua53.lib;freeglut.lib;libSOIL.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Middlewares\FMOD-1.09.06\inc;$(SolutionDir)\Middlewares\Soil\include\;$(SolutionDir)\Middlewares\LUA-5.3.4_win32\include\;$(SolutionDir)\Middlewares\freeglut-3\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Middlewares\Soil\lib\;$(SolutionDir)\Middlewares\LUA-5.3.4_win32\;$(SolutionDir)\Middlewares\freeglut-3\;$(SolutionDir)\Middlewares\FMOD-1.09.06\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>lua53.lib;freeglut.lib;libSOIL.lib;fmodL_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Controller\engine.cpp" />
+    <ClCompile Include="Controller\input.cpp" />
+    <ClCompile Include="Controller\Screen\aboutmenu.cpp" />
+    <ClCompile Include="Controller\Screen\ingame.cpp" />
+    <ClCompile Include="Controller\Screen\newgamemenu.cpp" />
+    <ClCompile Include="Controller\Screen\savegamemenu.cpp" />
+    <ClCompile Include="Controller\Screen\startmenu.cpp" />
+    <ClCompile Include="Controller\Screen\endmenu.cpp" />
+    <ClCompile Include="Controller\Screen\tutorialmenu.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Model\coordinate.cpp" />
+    <ClCompile Include="Model\luafile.cpp" />
+    <ClCompile Include="View\colorprofile.cpp" />
+    <ClCompile Include="View\drawable.cpp" />
+    <ClCompile Include="View\Gui\button.cpp" />
+    <ClCompile Include="View\Gui\guicontainer.cpp" />
+    <ClCompile Include="View\Gui\guielement.cpp" />
+    <ClCompile Include="View\Gui\label.cpp" />
+    <ClCompile Include="View\Gui\textbutton.cpp" />
+    <ClCompile Include="View\hex.cpp" />
+    <ClCompile Include="View\material.cpp" />
+    <ClCompile Include="View\mesh.cpp" />
+    <ClCompile Include="View\texture.cpp" />
+    <ClCompile Include="View\window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Controller\engine.h" />
+    <ClInclude Include="Controller\input.h" />
+    <ClInclude Include="Controller\Screen\aboutmenu.h" />
+    <ClInclude Include="Controller\Screen\ingame.h" />
+    <ClInclude Include="Controller\Screen\newgamemenu.h" />
+    <ClInclude Include="Controller\Screen\savegamemenu.h" />
+    <ClInclude Include="Controller\Screen\screen.h" />
+    <ClInclude Include="Controller\Screen\startmenu.h" />
+    <ClInclude Include="Controller\Screen\endmenu.h" />
+    <ClInclude Include="Controller\Screen\tutorialmenu.h" />
+    <ClInclude Include="Model\coordinate.h" />
+    <ClInclude Include="Model\Helper\binarycontainer.h" />
+    <ClInclude Include="Model\luafile.h" />
+    <ClInclude Include="Model\layer.h" />
+    <ClInclude Include="Model\map.h" />
+    <ClInclude Include="Model\neighbours.h" />
+    <ClInclude Include="Model\tile.h" />
+    <ClInclude Include="Model\tilemanager.h" />
+    <ClInclude Include="Model\types.h" />
+    <ClInclude Include="View\colorprofile.h" />
+    <ClInclude Include="View\drawable.h" />
+    <ClInclude Include="View\Gui\button.h" />
+    <ClInclude Include="View\Gui\guicontainer.h" />
+    <ClInclude Include="View\Gui\guielement.h" />
+    <ClInclude Include="View\Gui\label.h" />
+    <ClInclude Include="View\Gui\textbutton.h" />
+    <ClInclude Include="View\hex.h" />
+    <ClInclude Include="View\material.h" />
+    <ClInclude Include="View\mesh.h" />
+    <ClInclude Include="View\texture.h" />
+    <ClInclude Include="View\Utils\linearscale.h" />
+    <ClInclude Include="View\Utils\tokenizer.h" />
+    <ClInclude Include="View\Utils\vec2d.h" />
+    <ClInclude Include="View\Utils\vec3d.h" />
+    <ClInclude Include="View\vec2d.h" />
+    <ClInclude Include="View\vec3d.h" />
+    <ClInclude Include="View\window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
